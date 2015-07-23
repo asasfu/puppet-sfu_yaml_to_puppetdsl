@@ -1,0 +1,5 @@
+node '<%= @fqdn %>' {
+  <% @myreturn.each do |line| -%>
+    <%= "#{line}" %>
+  <% end -%>
+}

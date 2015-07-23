@@ -1,0 +1,30 @@
+{
+  "name": "asasfu-sfu_yaml_to_puppetdsl",
+  "version": "0.1.0",
+  "author": "asasfu",
+  "summary": "Module to test YAML output of nodes from foreman on the specific node.",
+  "license": "Apache 2.0",
+  "source": "https://github.com/asasfu/puppet-yaml_to_puppetdsl",
+  "project_page": "https://github.com/asasfu/puppet-yaml_to_puppetdsl",
+  "issues_url": null,
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
+  "description": "Useful for testing specific module upgrades and dependency conflicts without applying those modules to the server themselves.  This requires you to grab the YAML from the puppet master server in /var/lib/puppet/yaml/foreman/fqdn.yaml and send it(scp it) to the node that will be testing this (fqdn).  You have to add hiera data in as well if required and when you run it, you may have a few classes that need their orders rearranged so that they don't load and screw up declaration ordering.",
+  "dependencies": [ 
+    { "name": "puppetlabs/stdlib", "version_requirement": ">=4.3.0 <5.0.0" }, 
+    { "name": "asasfu/puppet-cleaner", "version_requirement": ">=0.3.1 <0.4.0" } 
+  ]
+}
