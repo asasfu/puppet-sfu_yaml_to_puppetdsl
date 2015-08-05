@@ -1,7 +1,7 @@
 puppet-sfu_yaml_to_puppetdsl
 ======
 
-sfu_yaml_to_puppetdsl Package install with puppet on Centos 6 &amp; 7 - supports repositories and versions
+sfu_yaml_to_puppetdsl for use with puppet and foreman and/or fancyass(SFU item)
 
 Documentation
 -------------
