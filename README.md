@@ -17,12 +17,11 @@ This module takes in a foreman or fancyass created YAML and converts it back to 
 Usage
 -----
 
-Defaults for this module contains the repo listed in the params class and defaults to latest package version.  This may be overridden in your puppet configs by calling any of the following:
+Defaults for this module contains the nodefqdn and filename_out, my_yaml MUST be provided.  This may be overridden in your puppet configs by calling any of the following:
 
   ```puppet
   class { sfu_yaml_to_puppetdsl: 
-    my_yaml      => '/tmp/rcg-pineneedle.rcg.sfu.ca.yaml',
-    filename_out => ''
+    my_yaml      => '/tmp/rcg-pineneedle.rcg.sfu.ca.yaml'
   }
   ```
   or
