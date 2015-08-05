@@ -9,6 +9,16 @@ Documentation
 Documentation for this and related projects can be found online at the
 https://github.com/asasfu/sfu_yaml_to_puppetdsl
 
+Dependency
+----------
+
+Load a YAML file containing a hash, and build it as a node manifest
+Uses puppet-cleaner gem, the safe forked copy at https://github.com/asasfu/puppet-cleaner (no gem dependency on puppet)
+Clone 'https://github.com/asasfu/puppet-cleaner' and then run `gem install --local puppet-cleaner/puppet-cleaner-0.3.1.gem`
+
+Useful for if you have the node's YAML from puppet and want to test it directly on a client with local modules installed
+
+
 Installation
 ------------
 
@@ -35,6 +45,7 @@ Defaults for this module contains the nodefqdn and filename_out, my_yaml MUST be
   ```
 You can use one or both values
 
+Once the manifest is compiled you should notice that in order to run it properly, you need to download(git clone or puppet module install) the modules that it will be referencing.  This will allow you to test out version conflicts and dependency issues before applying upgraded modules into production.  This is one of the options if you don't have a spinup of a second full puppet infrastructure(puppet still has types/providers and fact bleed so environment testing of certain modules in dev env. is not safe)
 
 Developing and Contributing
 ---------------------------
