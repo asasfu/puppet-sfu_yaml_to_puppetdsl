@@ -30,8 +30,9 @@ module Puppet::Parser::Functions
 
     data = YAML.load_file(args[0])
     nodefqdn = args[1]
+    filename_out = args[2]
     # If filename was not defined or empty string, set it to /tmp/fqdn.pp
-    if ! (filename_out = args[2]) || (filename_out = args[2].empty?)
+    if filename_out.nil? or filename_out.empty?
       filename_out = "/tmp/#{nodefqdn}.pp"
     end
 
@@ -89,6 +90,7 @@ module Puppet::Parser::Functions
 
     # Append trailing closing bracket for node manifest
     hasharray << "}\n"
+
     
     # Write our file out temporarily as puppet-cleaner takes files in, not sure how to feed it data otherwise
     writeFile(filename_out, hasharray)
